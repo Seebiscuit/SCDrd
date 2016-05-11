@@ -1,0 +1,120 @@
+﻿#banner {
+    position: relative;
+    top: -100px;
+}
+
+//**NEW POST **//
+// QuillJS
+#new-post {
+    #newpost-ql-editor {
+        .ql-editor {
+            min-height: 500px;
+            min-width: 100%;
+            padding: 10px;
+            border: 1px solid rgba(211, 211, 211, 0.5);
+
+            &:focus {
+                border: 1px solid lightgray;
+            }
+        }
+
+        img {
+            cursor: -webkit-grab;
+        }
+
+        .ql-image-tooltip {
+            display: none;
+        }
+    }
+    //Upload
+    div.upload {
+        .upload-url {
+            display: none;
+        }
+
+        &-url {
+            .upload-url {
+                display: inline;
+            }
+
+            .upload-file {
+                display: none;
+            }
+        }
+    }
+}
+
+//**COMPONENTS**//
+//File Input
+#file-upload-component {
+    &.preview {
+        .modal-body {
+
+            > :not(#file-upload-image-preview) {
+                display: none;
+            }
+        }
+    }
+}
+
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
+}
+
+input[readonly] {
+    background-color: white !important;
+    cursor: text !important;
+}
+//Image Preview
+#image-preview {
+    border: 1px solid gray;
+
+    .removeable {
+        float: none;
+    }
+
+    h3 {
+        text-align: center;
+    }
+
+    .caption-input {
+        display: none;
+    }
+
+    &.editing {
+        .caption-input {
+            display: block;
+        }
+
+        figcaption {
+            display: none;
+        }
+    }
+
+    input[name="size-slider"] {
+        &:focus {
+            box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+        }
+    }
+
+    form {
+        float: none;
+    }
+}

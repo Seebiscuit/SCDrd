@@ -1,0 +1,49 @@
+﻿<div class="container clearfix">
+
+    <div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
+
+    <!-- Logo
+                    ============================================= -->
+    <div id="logo">
+        <a href="index.html" class="standard-logo" data-dark-logo="images/SCDrd_Logo.png">
+            <img src="images/SCDrd_Logo.png" alt="SCDrd">
+        </a>
+        <!--<a href="index.html" class="retina-logo" data-dark-logo="images/logo-dark@2x.png">
+                    <img src="images/logo@2x.png" alt="Canvas Logo"></a>-->
+    </div>
+    <!-- #logo end -->
+    <!-- Primary Navigation
+                    ============================================= -->
+    <nav id="primary-menu" class="dark">
+
+        <ul class="links">
+            <li id="nav-link-blog" class="current">
+                <a role="button" tabindex="0">
+                    <div>Blog</div>
+                </a>
+            </li>
+            <li id="nav-link-about-me">
+                <a role="button" tabindex="0">
+                    <div>About Me</div>
+                </a>
+            </li>
+            <li id="nav-link-work-with-me">
+                <a role="button" tabindex="0">
+                    <div>Work With me</div>
+                </a>
+            </li>
+            <li id="nav-login">
+                <% if (isLoggedIn) { %>
+                <a class="nav-logged-in" role="button" tabindex="0">
+                    <div><%= userName %></div>
+                </a>
+                <% } else {%>
+                <a class="nav-logged-out" role="button" tabindex="0">
+                    <div>Login</div>
+                </a>
+                <% } %>
+            </li>
+        </ul>
+    </nav>
+    
+</div>

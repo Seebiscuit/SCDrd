@@ -1,0 +1,1272 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F3CAF307-CD00-4E8C-8A50-C1F63C81A667}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SCDrd</RootNamespace>
+    <AssemblyName>SCDrd</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Owin, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.3.0.1\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.3.0.1\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.3.0.1\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.3.0.1\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.Owin, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Owin.5.2.3\lib\net45\System.Web.Http.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease, Version=1.6.5135.21930, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Areas\HelpPage\ApiDescriptionExtensions.cs" />
+    <Compile Include="Areas\HelpPage\App_Start\HelpPageConfig.cs" />
+    <Compile Include="Areas\HelpPage\Controllers\HelpController.cs" />
+    <Compile Include="Areas\HelpPage\HelpPageAreaRegistration.cs" />
+    <Compile Include="Areas\HelpPage\HelpPageConfigurationExtensions.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\CollectionModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ComplexTypeModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\DictionaryModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\EnumTypeModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\EnumValueDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\IModelDocumentationProvider.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\KeyValuePairModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelDescriptionGenerator.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelNameAttribute.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelNameHelper.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ParameterAnnotation.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ParameterDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\SimpleTypeModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\Models\HelpPageApiModel.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\HelpPageSampleGenerator.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\HelpPageSampleKey.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\ImageSample.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\InvalidSample.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\ObjectGenerator.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
+    <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\PostsController.cs" />
+    <Compile Include="Controllers\SaveFileController.cs" />
+    <Compile Include="Controllers\TagsController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AccountBindingModels.cs" />
+    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\AspNetRole.cs">
+      <DependentUpon>SCDrdModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AspNetUser.cs">
+      <DependentUpon>SCDrdModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AspNetUserClaim.cs">
+      <DependentUpon>SCDrdModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AspNetUserLogin.cs">
+      <DependentUpon>SCDrdModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\C__MigrationHistory.cs">
+      <DependentUpon>SCDrdModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DataHelper\TagHelper.cs" />
+    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\Image.cs">
+      <DependentUpon>SCDrdModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Post.cs">
+      <DependentUpon>SCDrdModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PostDTO.cs" />
+    <Compile Include="Models\PostTag.cs">
+      <DependentUpon>SCDrdModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SCDrdModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SCDrdModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SCDrdModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SCDrdModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SCDrdModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SCDrdModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Tag.cs">
+      <DependentUpon>SCDrdModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Providers\ApplicationOAuthProvider.cs" />
+    <Compile Include="Results\ChallengeResult.cs" />
+    <Compile Include="Startup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\HelpPage\HelpPage.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\font-icons.svg" />
+    <Content Include="fonts\lined-icons.svg" />
+    <Content Include="fonts\Simple-Line-Icons.dev.svg" />
+    <Content Include="fonts\Simple-Line-Icons.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="images\frontspiece-kale-crop-text_2.jpg" />
+    <Content Include="images\SCDrd_Logo.png" />
+    <Content Include="index.html" />
+    <Content Include="scripts\app.build.js" />
+    <Content Include="scripts\app.js" />
+    <Content Include="scripts\collections\Posts.js" />
+    <Content Include="scripts\collections\Tags.js" />
+    <Content Include="scripts\dev\theme-plugins.js" />
+    <Content Include="scripts\lib\quill-custom.js" />
+    <Content Include="scripts\lib\radios.js" />
+    <Content Include="scripts\lib\store.js" />
+    <Content Include="scripts\lib\upload-file\ImagePreview.js" />
+    <Content Include="scripts\lib\upload-file\image-preview.html" />
+    <Content Include="scripts\lib\upload-file\upload-file.html" />
+    <Content Include="scripts\lib\upload-file\UploadFile.js" />
+    <Content Include="scripts\main.js" />
+    <Content Include="scripts\lib\user-login.js" />
+    <Content Include="scripts\models\Post.js" />
+    <Content Include="scripts\models\Tag.js" />
+    <Content Include="scripts\node_modules\.bin\r.js" />
+    <Content Include="scripts\node_modules\requirejs\bin\r.js" />
+    <Content Include="scripts\node_modules\requirejs\require.js" />
+    <Content Include="scripts\RootView.js" />
+    <Content Include="scripts\routers\router.js" />
+    <Content Include="scripts\templates.js" />
+    <Content Include="scripts\vendor\animate.less\.gitignore" />
+    <Content Include="scripts\vendor\animate.less\animate.css" />
+    <Content Include="scripts\vendor\animate.less\animate.min.css" />
+    <Content Include="scripts\vendor\backbone.babysitter\lib\backbone.babysitter.js" />
+    <Content Include="scripts\vendor\backbone.babysitter\lib\backbone.babysitter.min.js" />
+    <Content Include="scripts\vendor\backbone.babysitter\spec\javascripts\childviewContainer.spec.js" />
+    <Content Include="scripts\vendor\backbone.babysitter\spec\javascripts\helpers\jasmineMatchers.js" />
+    <Content Include="scripts\vendor\backbone.babysitter\src\build\backbone.babysitter.js" />
+    <Content Include="scripts\vendor\backbone.babysitter\src\childviewcontainer.js" />
+    <Content Include="scripts\vendor\backbone.marionette\lib\backbone.marionette.js" />
+    <Content Include="scripts\vendor\backbone.marionette\lib\backbone.marionette.min.js" />
+    <Content Include="scripts\vendor\backbone.marionette\lib\core\backbone.marionette.js" />
+    <Content Include="scripts\vendor\backbone.marionette\lib\core\backbone.marionette.min.js" />
+    <Content Include="scripts\vendor\backbone.marionette\license.txt" />
+    <Content Include="scripts\vendor\backbone.radio\build\backbone.radio.js" />
+    <Content Include="scripts\vendor\backbone.radio\build\backbone.radio.min.js" />
+    <Content Include="scripts\vendor\backbone.radio\gulpfile.js" />
+    <Content Include="scripts\vendor\backbone.radio\radio.shim.js" />
+    <Content Include="scripts\vendor\backbone.radio\src\backbone.radio.js" />
+    <Content Include="scripts\vendor\backbone.wreqr\lib\backbone.wreqr.js" />
+    <Content Include="scripts\vendor\backbone.wreqr\lib\backbone.wreqr.min.js" />
+    <Content Include="scripts\vendor\backbone.wreqr\spec\javascripts\channel\connect-commands.spec.js" />
+    <Content Include="scripts\vendor\backbone.wreqr\spec\javascripts\channel\connect-events.spec.js" />
+    <Content Include="scripts\vendor\backbone.wreqr\spec\javascripts\channel\connect-requests.spec.js" />
+    <Content Include="scripts\vendor\backbone.wreqr\spec\javascripts\channel\create.spec.js" />
+    <Content Include="scripts\vendor\backbone.wreqr\spec\javascripts\channel\reset.spec.js" />
+    <Content Include="scripts\vendor\backbone.wreqr\spec\javascripts\commands.spec.js" />
+    <Content Include="scripts\vendor\backbone.wreqr\spec\javascripts\commandStorage.custom.spec.js" />
+    <Content Include="scripts\vendor\backbone.wreqr\spec\javascripts\commandStorage.spec.js" />
+    <Content Include="scripts\vendor\backbone.wreqr\spec\javascripts\eventaggregator.spec.js" />
+    <Content Include="scripts\vendor\backbone.wreqr\spec\javascripts\handlers.setFromHash.spec.js" />
+    <Content Include="scripts\vendor\backbone.wreqr\spec\javascripts\handlers.spec.js" />
+    <Content Include="scripts\vendor\backbone.wreqr\spec\javascripts\helpers\jasmineMatchers.js" />
+    <Content Include="scripts\vendor\backbone.wreqr\spec\javascripts\radio\channel.spec.js" />
+    <Content Include="scripts\vendor\backbone.wreqr\spec\javascripts\radio\commands.spec.js" />
+    <Content Include="scripts\vendor\backbone.wreqr\spec\javascripts\radio\reqres.spec.js" />
+    <Content Include="scripts\vendor\backbone.wreqr\spec\javascripts\radio\vent.spec.js" />
+    <Content Include="scripts\vendor\backbone.wreqr\spec\javascripts\requestResponse.spec.js" />
+    <Content Include="scripts\vendor\backbone.wreqr\spec\javascripts\support\wreqrHelper.js" />
+    <Content Include="scripts\vendor\backbone.wreqr\src\build\backbone.wreqr.js" />
+    <Content Include="scripts\vendor\backbone.wreqr\src\wreqr.channel.js" />
+    <Content Include="scripts\vendor\backbone.wreqr\src\wreqr.commands.js" />
+    <Content Include="scripts\vendor\backbone.wreqr\src\wreqr.commandStorage.js" />
+    <Content Include="scripts\vendor\backbone.wreqr\src\wreqr.eventaggregator.js" />
+    <Content Include="scripts\vendor\backbone.wreqr\src\wreqr.handlers.js" />
+    <Content Include="scripts\vendor\backbone.wreqr\src\wreqr.radio.js" />
+    <Content Include="scripts\vendor\backbone.wreqr\src\wreqr.requestresponse.js" />
+    <Content Include="scripts\vendor\backbone\backbone-min.js" />
+    <Content Include="scripts\vendor\backbone\backbone.js" />
+    <Content Include="scripts\vendor\bootstrap\dist\css\bootstrap-theme.css" />
+    <Content Include="scripts\vendor\bootstrap\dist\css\bootstrap-theme.min.css" />
+    <Content Include="scripts\vendor\bootstrap\dist\css\bootstrap.css" />
+    <Content Include="scripts\vendor\bootstrap\dist\css\bootstrap.min.css" />
+    <Content Include="scripts\vendor\bootstrap\dist\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="scripts\vendor\bootstrap\dist\js\bootstrap.js" />
+    <Content Include="scripts\vendor\bootstrap\dist\js\bootstrap.min.js" />
+    <Content Include="scripts\vendor\bootstrap\dist\js\npm.js" />
+    <Content Include="scripts\vendor\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="scripts\vendor\bootstrap\Gruntfile.js" />
+    <Content Include="scripts\vendor\bootstrap\grunt\bs-commonjs-generator.js" />
+    <Content Include="scripts\vendor\bootstrap\grunt\bs-glyphicons-data-generator.js" />
+    <Content Include="scripts\vendor\bootstrap\grunt\bs-lessdoc-parser.js" />
+    <Content Include="scripts\vendor\bootstrap\grunt\bs-raw-files-generator.js" />
+    <Content Include="scripts\vendor\bootstrap\js\affix.js" />
+    <Content Include="scripts\vendor\bootstrap\js\alert.js" />
+    <Content Include="scripts\vendor\bootstrap\js\button.js" />
+    <Content Include="scripts\vendor\bootstrap\js\carousel.js" />
+    <Content Include="scripts\vendor\bootstrap\js\collapse.js" />
+    <Content Include="scripts\vendor\bootstrap\js\dropdown.js" />
+    <Content Include="scripts\vendor\bootstrap\js\modal.js" />
+    <Content Include="scripts\vendor\bootstrap\js\popover.js" />
+    <Content Include="scripts\vendor\bootstrap\js\scrollspy.js" />
+    <Content Include="scripts\vendor\bootstrap\js\tab.js" />
+    <Content Include="scripts\vendor\bootstrap\js\tooltip.js" />
+    <Content Include="scripts\vendor\bootstrap\js\transition.js" />
+    <Content Include="scripts\vendor\bootstrap\package.js" />
+    <Content Include="scripts\vendor\jquery\dist\jquery.js" />
+    <Content Include="scripts\vendor\jquery\dist\jquery.min.js" />
+    <Content Include="scripts\vendor\jquery\MIT-LICENSE.txt" />
+    <Content Include="scripts\vendor\jquery\src\ajax.js" />
+    <Content Include="scripts\vendor\jquery\src\ajax\jsonp.js" />
+    <Content Include="scripts\vendor\jquery\src\ajax\load.js" />
+    <Content Include="scripts\vendor\jquery\src\ajax\parseJSON.js" />
+    <Content Include="scripts\vendor\jquery\src\ajax\parseXML.js" />
+    <Content Include="scripts\vendor\jquery\src\ajax\script.js" />
+    <Content Include="scripts\vendor\jquery\src\ajax\var\nonce.js" />
+    <Content Include="scripts\vendor\jquery\src\ajax\var\rquery.js" />
+    <Content Include="scripts\vendor\jquery\src\ajax\xhr.js" />
+    <Content Include="scripts\vendor\jquery\src\attributes.js" />
+    <Content Include="scripts\vendor\jquery\src\attributes\attr.js" />
+    <Content Include="scripts\vendor\jquery\src\attributes\classes.js" />
+    <Content Include="scripts\vendor\jquery\src\attributes\prop.js" />
+    <Content Include="scripts\vendor\jquery\src\attributes\support.js" />
+    <Content Include="scripts\vendor\jquery\src\attributes\val.js" />
+    <Content Include="scripts\vendor\jquery\src\callbacks.js" />
+    <Content Include="scripts\vendor\jquery\src\core.js" />
+    <Content Include="scripts\vendor\jquery\src\core\access.js" />
+    <Content Include="scripts\vendor\jquery\src\core\init.js" />
+    <Content Include="scripts\vendor\jquery\src\core\parseHTML.js" />
+    <Content Include="scripts\vendor\jquery\src\core\ready.js" />
+    <Content Include="scripts\vendor\jquery\src\core\var\rsingleTag.js" />
+    <Content Include="scripts\vendor\jquery\src\css.js" />
+    <Content Include="scripts\vendor\jquery\src\css\addGetHookIf.js" />
+    <Content Include="scripts\vendor\jquery\src\css\curCSS.js" />
+    <Content Include="scripts\vendor\jquery\src\css\defaultDisplay.js" />
+    <Content Include="scripts\vendor\jquery\src\css\hiddenVisibleSelectors.js" />
+    <Content Include="scripts\vendor\jquery\src\css\support.js" />
+    <Content Include="scripts\vendor\jquery\src\css\swap.js" />
+    <Content Include="scripts\vendor\jquery\src\css\var\cssExpand.js" />
+    <Content Include="scripts\vendor\jquery\src\css\var\getStyles.js" />
+    <Content Include="scripts\vendor\jquery\src\css\var\isHidden.js" />
+    <Content Include="scripts\vendor\jquery\src\css\var\rmargin.js" />
+    <Content Include="scripts\vendor\jquery\src\css\var\rnumnonpx.js" />
+    <Content Include="scripts\vendor\jquery\src\data.js" />
+    <Content Include="scripts\vendor\jquery\src\data\accepts.js" />
+    <Content Include="scripts\vendor\jquery\src\data\Data.js" />
+    <Content Include="scripts\vendor\jquery\src\data\var\data_priv.js" />
+    <Content Include="scripts\vendor\jquery\src\data\var\data_user.js" />
+    <Content Include="scripts\vendor\jquery\src\deferred.js" />
+    <Content Include="scripts\vendor\jquery\src\deprecated.js" />
+    <Content Include="scripts\vendor\jquery\src\dimensions.js" />
+    <Content Include="scripts\vendor\jquery\src\effects.js" />
+    <Content Include="scripts\vendor\jquery\src\effects\animatedSelector.js" />
+    <Content Include="scripts\vendor\jquery\src\effects\Tween.js" />
+    <Content Include="scripts\vendor\jquery\src\event.js" />
+    <Content Include="scripts\vendor\jquery\src\event\ajax.js" />
+    <Content Include="scripts\vendor\jquery\src\event\alias.js" />
+    <Content Include="scripts\vendor\jquery\src\event\support.js" />
+    <Content Include="scripts\vendor\jquery\src\exports\amd.js" />
+    <Content Include="scripts\vendor\jquery\src\exports\global.js" />
+    <Content Include="scripts\vendor\jquery\src\intro.js" />
+    <Content Include="scripts\vendor\jquery\src\jquery.js" />
+    <Content Include="scripts\vendor\jquery\src\manipulation.js" />
+    <Content Include="scripts\vendor\jquery\src\manipulation\support.js" />
+    <Content Include="scripts\vendor\jquery\src\manipulation\var\rcheckableType.js" />
+    <Content Include="scripts\vendor\jquery\src\manipulation\_evalUrl.js" />
+    <Content Include="scripts\vendor\jquery\src\offset.js" />
+    <Content Include="scripts\vendor\jquery\src\outro.js" />
+    <Content Include="scripts\vendor\jquery\src\queue.js" />
+    <Content Include="scripts\vendor\jquery\src\queue\delay.js" />
+    <Content Include="scripts\vendor\jquery\src\selector-native.js" />
+    <Content Include="scripts\vendor\jquery\src\selector-sizzle.js" />
+    <Content Include="scripts\vendor\jquery\src\selector.js" />
+    <Content Include="scripts\vendor\jquery\src\serialize.js" />
+    <Content Include="scripts\vendor\jquery\src\sizzle\dist\sizzle.js" />
+    <Content Include="scripts\vendor\jquery\src\sizzle\dist\sizzle.min.js" />
+    <Content Include="scripts\vendor\jquery\src\traversing.js" />
+    <Content Include="scripts\vendor\jquery\src\traversing\findFilter.js" />
+    <Content Include="scripts\vendor\jquery\src\traversing\var\rneedsContext.js" />
+    <Content Include="scripts\vendor\jquery\src\var\arr.js" />
+    <Content Include="scripts\vendor\jquery\src\var\class2type.js" />
+    <Content Include="scripts\vendor\jquery\src\var\concat.js" />
+    <Content Include="scripts\vendor\jquery\src\var\hasOwn.js" />
+    <Content Include="scripts\vendor\jquery\src\var\indexOf.js" />
+    <Content Include="scripts\vendor\jquery\src\var\pnum.js" />
+    <Content Include="scripts\vendor\jquery\src\var\push.js" />
+    <Content Include="scripts\vendor\jquery\src\var\rnotwhite.js" />
+    <Content Include="scripts\vendor\jquery\src\var\slice.js" />
+    <Content Include="scripts\vendor\jquery\src\var\strundefined.js" />
+    <Content Include="scripts\vendor\jquery\src\var\support.js" />
+    <Content Include="scripts\vendor\jquery\src\var\toString.js" />
+    <Content Include="scripts\vendor\jquery\src\wrap.js" />
+    <Content Include="scripts\vendor\moment\locale\af.js" />
+    <Content Include="scripts\vendor\moment\locale\ar-ma.js" />
+    <Content Include="scripts\vendor\moment\locale\ar-sa.js" />
+    <Content Include="scripts\vendor\moment\locale\ar-tn.js" />
+    <Content Include="scripts\vendor\moment\locale\ar.js" />
+    <Content Include="scripts\vendor\moment\locale\az.js" />
+    <Content Include="scripts\vendor\moment\locale\be.js" />
+    <Content Include="scripts\vendor\moment\locale\bg.js" />
+    <Content Include="scripts\vendor\moment\locale\bn.js" />
+    <Content Include="scripts\vendor\moment\locale\bo.js" />
+    <Content Include="scripts\vendor\moment\locale\br.js" />
+    <Content Include="scripts\vendor\moment\locale\bs.js" />
+    <Content Include="scripts\vendor\moment\locale\ca.js" />
+    <Content Include="scripts\vendor\moment\locale\cs.js" />
+    <Content Include="scripts\vendor\moment\locale\cv.js" />
+    <Content Include="scripts\vendor\moment\locale\cy.js" />
+    <Content Include="scripts\vendor\moment\locale\da.js" />
+    <Content Include="scripts\vendor\moment\locale\de-at.js" />
+    <Content Include="scripts\vendor\moment\locale\de.js" />
+    <Content Include="scripts\vendor\moment\locale\el.js" />
+    <Content Include="scripts\vendor\moment\locale\en-au.js" />
+    <Content Include="scripts\vendor\moment\locale\en-ca.js" />
+    <Content Include="scripts\vendor\moment\locale\en-gb.js" />
+    <Content Include="scripts\vendor\moment\locale\eo.js" />
+    <Content Include="scripts\vendor\moment\locale\es.js" />
+    <Content Include="scripts\vendor\moment\locale\et.js" />
+    <Content Include="scripts\vendor\moment\locale\eu.js" />
+    <Content Include="scripts\vendor\moment\locale\fa.js" />
+    <Content Include="scripts\vendor\moment\locale\fi.js" />
+    <Content Include="scripts\vendor\moment\locale\fo.js" />
+    <Content Include="scripts\vendor\moment\locale\fr-ca.js" />
+    <Content Include="scripts\vendor\moment\locale\fr.js" />
+    <Content Include="scripts\vendor\moment\locale\fy.js" />
+    <Content Include="scripts\vendor\moment\locale\gl.js" />
+    <Content Include="scripts\vendor\moment\locale\he.js" />
+    <Content Include="scripts\vendor\moment\locale\hi.js" />
+    <Content Include="scripts\vendor\moment\locale\hr.js" />
+    <Content Include="scripts\vendor\moment\locale\hu.js" />
+    <Content Include="scripts\vendor\moment\locale\hy-am.js" />
+    <Content Include="scripts\vendor\moment\locale\id.js" />
+    <Content Include="scripts\vendor\moment\locale\is.js" />
+    <Content Include="scripts\vendor\moment\locale\it.js" />
+    <Content Include="scripts\vendor\moment\locale\ja.js" />
+    <Content Include="scripts\vendor\moment\locale\jv.js" />
+    <Content Include="scripts\vendor\moment\locale\ka.js" />
+    <Content Include="scripts\vendor\moment\locale\km.js" />
+    <Content Include="scripts\vendor\moment\locale\ko.js" />
+    <Content Include="scripts\vendor\moment\locale\lb.js" />
+    <Content Include="scripts\vendor\moment\locale\lt.js" />
+    <Content Include="scripts\vendor\moment\locale\lv.js" />
+    <Content Include="scripts\vendor\moment\locale\me.js" />
+    <Content Include="scripts\vendor\moment\locale\mk.js" />
+    <Content Include="scripts\vendor\moment\locale\ml.js" />
+    <Content Include="scripts\vendor\moment\locale\mr.js" />
+    <Content Include="scripts\vendor\moment\locale\ms-my.js" />
+    <Content Include="scripts\vendor\moment\locale\ms.js" />
+    <Content Include="scripts\vendor\moment\locale\my.js" />
+    <Content Include="scripts\vendor\moment\locale\nb.js" />
+    <Content Include="scripts\vendor\moment\locale\ne.js" />
+    <Content Include="scripts\vendor\moment\locale\nl.js" />
+    <Content Include="scripts\vendor\moment\locale\nn.js" />
+    <Content Include="scripts\vendor\moment\locale\pl.js" />
+    <Content Include="scripts\vendor\moment\locale\pt-br.js" />
+    <Content Include="scripts\vendor\moment\locale\pt.js" />
+    <Content Include="scripts\vendor\moment\locale\ro.js" />
+    <Content Include="scripts\vendor\moment\locale\ru.js" />
+    <Content Include="scripts\vendor\moment\locale\si.js" />
+    <Content Include="scripts\vendor\moment\locale\sk.js" />
+    <Content Include="scripts\vendor\moment\locale\sl.js" />
+    <Content Include="scripts\vendor\moment\locale\sq.js" />
+    <Content Include="scripts\vendor\moment\locale\sr-cyrl.js" />
+    <Content Include="scripts\vendor\moment\locale\sr.js" />
+    <Content Include="scripts\vendor\moment\locale\sv.js" />
+    <Content Include="scripts\vendor\moment\locale\ta.js" />
+    <Content Include="scripts\vendor\moment\locale\th.js" />
+    <Content Include="scripts\vendor\moment\locale\tl-ph.js" />
+    <Content Include="scripts\vendor\moment\locale\tr.js" />
+    <Content Include="scripts\vendor\moment\locale\tzl.js" />
+    <Content Include="scripts\vendor\moment\locale\tzm-latn.js" />
+    <Content Include="scripts\vendor\moment\locale\tzm.js" />
+    <Content Include="scripts\vendor\moment\locale\uk.js" />
+    <Content Include="scripts\vendor\moment\locale\uz.js" />
+    <Content Include="scripts\vendor\moment\locale\vi.js" />
+    <Content Include="scripts\vendor\moment\locale\zh-cn.js" />
+    <Content Include="scripts\vendor\moment\locale\zh-tw.js" />
+    <Content Include="scripts\vendor\moment\min\locales.js" />
+    <Content Include="scripts\vendor\moment\min\locales.min.js" />
+    <Content Include="scripts\vendor\moment\min\moment-with-locales.js" />
+    <Content Include="scripts\vendor\moment\min\moment-with-locales.min.js" />
+    <Content Include="scripts\vendor\moment\min\moment.min.js" />
+    <Content Include="scripts\vendor\moment\min\tests.js" />
+    <Content Include="scripts\vendor\moment\moment.js" />
+    <Content Include="scripts\vendor\moment\src\lib\create\check-overflow.js" />
+    <Content Include="scripts\vendor\moment\src\lib\create\date-from-array.js" />
+    <Content Include="scripts\vendor\moment\src\lib\create\from-anything.js" />
+    <Content Include="scripts\vendor\moment\src\lib\create\from-array.js" />
+    <Content Include="scripts\vendor\moment\src\lib\create\from-object.js" />
+    <Content Include="scripts\vendor\moment\src\lib\create\from-string-and-array.js" />
+    <Content Include="scripts\vendor\moment\src\lib\create\from-string-and-format.js" />
+    <Content Include="scripts\vendor\moment\src\lib\create\from-string.js" />
+    <Content Include="scripts\vendor\moment\src\lib\create\local.js" />
+    <Content Include="scripts\vendor\moment\src\lib\create\parsing-flags.js" />
+    <Content Include="scripts\vendor\moment\src\lib\create\utc.js" />
+    <Content Include="scripts\vendor\moment\src\lib\create\valid.js" />
+    <Content Include="scripts\vendor\moment\src\lib\duration\abs.js" />
+    <Content Include="scripts\vendor\moment\src\lib\duration\add-subtract.js" />
+    <Content Include="scripts\vendor\moment\src\lib\duration\as.js" />
+    <Content Include="scripts\vendor\moment\src\lib\duration\bubble.js" />
+    <Content Include="scripts\vendor\moment\src\lib\duration\constructor.js" />
+    <Content Include="scripts\vendor\moment\src\lib\duration\create.js" />
+    <Content Include="scripts\vendor\moment\src\lib\duration\duration.js" />
+    <Content Include="scripts\vendor\moment\src\lib\duration\get.js" />
+    <Content Include="scripts\vendor\moment\src\lib\duration\humanize.js" />
+    <Content Include="scripts\vendor\moment\src\lib\duration\iso-string.js" />
+    <Content Include="scripts\vendor\moment\src\lib\duration\prototype.js" />
+    <Content Include="scripts\vendor\moment\src\lib\format\format.js" />
+    <Content Include="scripts\vendor\moment\src\lib\locale\calendar.js" />
+    <Content Include="scripts\vendor\moment\src\lib\locale\constructor.js" />
+    <Content Include="scripts\vendor\moment\src\lib\locale\en.js" />
+    <Content Include="scripts\vendor\moment\src\lib\locale\formats.js" />
+    <Content Include="scripts\vendor\moment\src\lib\locale\invalid.js" />
+    <Content Include="scripts\vendor\moment\src\lib\locale\lists.js" />
+    <Content Include="scripts\vendor\moment\src\lib\locale\locale.js" />
+    <Content Include="scripts\vendor\moment\src\lib\locale\locales.js" />
+    <Content Include="scripts\vendor\moment\src\lib\locale\ordinal.js" />
+    <Content Include="scripts\vendor\moment\src\lib\locale\pre-post-format.js" />
+    <Content Include="scripts\vendor\moment\src\lib\locale\prototype.js" />
+    <Content Include="scripts\vendor\moment\src\lib\locale\relative.js" />
+    <Content Include="scripts\vendor\moment\src\lib\locale\set.js" />
+    <Content Include="scripts\vendor\moment\src\lib\moment\add-subtract.js" />
+    <Content Include="scripts\vendor\moment\src\lib\moment\calendar.js" />
+    <Content Include="scripts\vendor\moment\src\lib\moment\clone.js" />
+    <Content Include="scripts\vendor\moment\src\lib\moment\compare.js" />
+    <Content Include="scripts\vendor\moment\src\lib\moment\constructor.js" />
+    <Content Include="scripts\vendor\moment\src\lib\moment\diff.js" />
+    <Content Include="scripts\vendor\moment\src\lib\moment\format.js" />
+    <Content Include="scripts\vendor\moment\src\lib\moment\from.js" />
+    <Content Include="scripts\vendor\moment\src\lib\moment\get-set.js" />
+    <Content Include="scripts\vendor\moment\src\lib\moment\locale.js" />
+    <Content Include="scripts\vendor\moment\src\lib\moment\min-max.js" />
+    <Content Include="scripts\vendor\moment\src\lib\moment\moment.js" />
+    <Content Include="scripts\vendor\moment\src\lib\moment\prototype.js" />
+    <Content Include="scripts\vendor\moment\src\lib\moment\start-end-of.js" />
+    <Content Include="scripts\vendor\moment\src\lib\moment\to-type.js" />
+    <Content Include="scripts\vendor\moment\src\lib\moment\to.js" />
+    <Content Include="scripts\vendor\moment\src\lib\moment\valid.js" />
+    <Content Include="scripts\vendor\moment\src\lib\parse\regex.js" />
+    <Content Include="scripts\vendor\moment\src\lib\parse\token.js" />
+    <Content Include="scripts\vendor\moment\src\lib\units\aliases.js" />
+    <Content Include="scripts\vendor\moment\src\lib\units\constants.js" />
+    <Content Include="scripts\vendor\moment\src\lib\units\day-of-month.js" />
+    <Content Include="scripts\vendor\moment\src\lib\units\day-of-week.js" />
+    <Content Include="scripts\vendor\moment\src\lib\units\day-of-year.js" />
+    <Content Include="scripts\vendor\moment\src\lib\units\hour.js" />
+    <Content Include="scripts\vendor\moment\src\lib\units\millisecond.js" />
+    <Content Include="scripts\vendor\moment\src\lib\units\minute.js" />
+    <Content Include="scripts\vendor\moment\src\lib\units\month.js" />
+    <Content Include="scripts\vendor\moment\src\lib\units\offset.js" />
+    <Content Include="scripts\vendor\moment\src\lib\units\quarter.js" />
+    <Content Include="scripts\vendor\moment\src\lib\units\second.js" />
+    <Content Include="scripts\vendor\moment\src\lib\units\timestamp.js" />
+    <Content Include="scripts\vendor\moment\src\lib\units\timezone.js" />
+    <Content Include="scripts\vendor\moment\src\lib\units\units.js" />
+    <Content Include="scripts\vendor\moment\src\lib\units\week-year.js" />
+    <Content Include="scripts\vendor\moment\src\lib\units\week.js" />
+    <Content Include="scripts\vendor\moment\src\lib\units\year.js" />
+    <Content Include="scripts\vendor\moment\src\lib\utils\abs-ceil.js" />
+    <Content Include="scripts\vendor\moment\src\lib\utils\abs-floor.js" />
+    <Content Include="scripts\vendor\moment\src\lib\utils\compare-arrays.js" />
+    <Content Include="scripts\vendor\moment\src\lib\utils\defaults.js" />
+    <Content Include="scripts\vendor\moment\src\lib\utils\deprecate.js" />
+    <Content Include="scripts\vendor\moment\src\lib\utils\extend.js" />
+    <Content Include="scripts\vendor\moment\src\lib\utils\has-own-prop.js" />
+    <Content Include="scripts\vendor\moment\src\lib\utils\hooks.js" />
+    <Content Include="scripts\vendor\moment\src\lib\utils\is-array.js" />
+    <Content Include="scripts\vendor\moment\src\lib\utils\is-date.js" />
+    <Content Include="scripts\vendor\moment\src\lib\utils\map.js" />
+    <Content Include="scripts\vendor\moment\src\lib\utils\to-int.js" />
+    <Content Include="scripts\vendor\moment\src\lib\utils\zero-fill.js" />
+    <Content Include="scripts\vendor\moment\src\locale\af.js" />
+    <Content Include="scripts\vendor\moment\src\locale\ar-ma.js" />
+    <Content Include="scripts\vendor\moment\src\locale\ar-sa.js" />
+    <Content Include="scripts\vendor\moment\src\locale\ar-tn.js" />
+    <Content Include="scripts\vendor\moment\src\locale\ar.js" />
+    <Content Include="scripts\vendor\moment\src\locale\az.js" />
+    <Content Include="scripts\vendor\moment\src\locale\be.js" />
+    <Content Include="scripts\vendor\moment\src\locale\bg.js" />
+    <Content Include="scripts\vendor\moment\src\locale\bn.js" />
+    <Content Include="scripts\vendor\moment\src\locale\bo.js" />
+    <Content Include="scripts\vendor\moment\src\locale\br.js" />
+    <Content Include="scripts\vendor\moment\src\locale\bs.js" />
+    <Content Include="scripts\vendor\moment\src\locale\ca.js" />
+    <Content Include="scripts\vendor\moment\src\locale\cs.js" />
+    <Content Include="scripts\vendor\moment\src\locale\cv.js" />
+    <Content Include="scripts\vendor\moment\src\locale\cy.js" />
+    <Content Include="scripts\vendor\moment\src\locale\da.js" />
+    <Content Include="scripts\vendor\moment\src\locale\de-at.js" />
+    <Content Include="scripts\vendor\moment\src\locale\de.js" />
+    <Content Include="scripts\vendor\moment\src\locale\el.js" />
+    <Content Include="scripts\vendor\moment\src\locale\en-au.js" />
+    <Content Include="scripts\vendor\moment\src\locale\en-ca.js" />
+    <Content Include="scripts\vendor\moment\src\locale\en-gb.js" />
+    <Content Include="scripts\vendor\moment\src\locale\eo.js" />
+    <Content Include="scripts\vendor\moment\src\locale\es.js" />
+    <Content Include="scripts\vendor\moment\src\locale\et.js" />
+    <Content Include="scripts\vendor\moment\src\locale\eu.js" />
+    <Content Include="scripts\vendor\moment\src\locale\fa.js" />
+    <Content Include="scripts\vendor\moment\src\locale\fi.js" />
+    <Content Include="scripts\vendor\moment\src\locale\fo.js" />
+    <Content Include="scripts\vendor\moment\src\locale\fr-ca.js" />
+    <Content Include="scripts\vendor\moment\src\locale\fr.js" />
+    <Content Include="scripts\vendor\moment\src\locale\fy.js" />
+    <Content Include="scripts\vendor\moment\src\locale\gl.js" />
+    <Content Include="scripts\vendor\moment\src\locale\he.js" />
+    <Content Include="scripts\vendor\moment\src\locale\hi.js" />
+    <Content Include="scripts\vendor\moment\src\locale\hr.js" />
+    <Content Include="scripts\vendor\moment\src\locale\hu.js" />
+    <Content Include="scripts\vendor\moment\src\locale\hy-am.js" />
+    <Content Include="scripts\vendor\moment\src\locale\id.js" />
+    <Content Include="scripts\vendor\moment\src\locale\is.js" />
+    <Content Include="scripts\vendor\moment\src\locale\it.js" />
+    <Content Include="scripts\vendor\moment\src\locale\ja.js" />
+    <Content Include="scripts\vendor\moment\src\locale\jv.js" />
+    <Content Include="scripts\vendor\moment\src\locale\ka.js" />
+    <Content Include="scripts\vendor\moment\src\locale\km.js" />
+    <Content Include="scripts\vendor\moment\src\locale\ko.js" />
+    <Content Include="scripts\vendor\moment\src\locale\lb.js" />
+    <Content Include="scripts\vendor\moment\src\locale\lt.js" />
+    <Content Include="scripts\vendor\moment\src\locale\lv.js" />
+    <Content Include="scripts\vendor\moment\src\locale\me.js" />
+    <Content Include="scripts\vendor\moment\src\locale\mk.js" />
+    <Content Include="scripts\vendor\moment\src\locale\ml.js" />
+    <Content Include="scripts\vendor\moment\src\locale\mr.js" />
+    <Content Include="scripts\vendor\moment\src\locale\ms-my.js" />
+    <Content Include="scripts\vendor\moment\src\locale\ms.js" />
+    <Content Include="scripts\vendor\moment\src\locale\my.js" />
+    <Content Include="scripts\vendor\moment\src\locale\nb.js" />
+    <Content Include="scripts\vendor\moment\src\locale\ne.js" />
+    <Content Include="scripts\vendor\moment\src\locale\nl.js" />
+    <Content Include="scripts\vendor\moment\src\locale\nn.js" />
+    <Content Include="scripts\vendor\moment\src\locale\pl.js" />
+    <Content Include="scripts\vendor\moment\src\locale\pt-br.js" />
+    <Content Include="scripts\vendor\moment\src\locale\pt.js" />
+    <Content Include="scripts\vendor\moment\src\locale\ro.js" />
+    <Content Include="scripts\vendor\moment\src\locale\ru.js" />
+    <Content Include="scripts\vendor\moment\src\locale\si.js" />
+    <Content Include="scripts\vendor\moment\src\locale\sk.js" />
+    <Content Include="scripts\vendor\moment\src\locale\sl.js" />
+    <Content Include="scripts\vendor\moment\src\locale\sq.js" />
+    <Content Include="scripts\vendor\moment\src\locale\sr-cyrl.js" />
+    <Content Include="scripts\vendor\moment\src\locale\sr.js" />
+    <Content Include="scripts\vendor\moment\src\locale\sv.js" />
+    <Content Include="scripts\vendor\moment\src\locale\ta.js" />
+    <Content Include="scripts\vendor\moment\src\locale\th.js" />
+    <Content Include="scripts\vendor\moment\src\locale\tl-ph.js" />
+    <Content Include="scripts\vendor\moment\src\locale\tr.js" />
+    <Content Include="scripts\vendor\moment\src\locale\tzl.js" />
+    <Content Include="scripts\vendor\moment\src\locale\tzm-latn.js" />
+    <Content Include="scripts\vendor\moment\src\locale\tzm.js" />
+    <Content Include="scripts\vendor\moment\src\locale\uk.js" />
+    <Content Include="scripts\vendor\moment\src\locale\uz.js" />
+    <Content Include="scripts\vendor\moment\src\locale\vi.js" />
+    <Content Include="scripts\vendor\moment\src\locale\zh-cn.js" />
+    <Content Include="scripts\vendor\moment\src\locale\zh-tw.js" />
+    <Content Include="scripts\vendor\moment\src\moment.js" />
+    <Content Include="scripts\vendor\moment\templates\amd-named.js" />
+    <Content Include="scripts\vendor\moment\templates\amd.js" />
+    <Content Include="scripts\vendor\moment\templates\globals.js" />
+    <Content Include="scripts\vendor\moment\templates\locale-header.js" />
+    <Content Include="scripts\vendor\moment\templates\test-header.js" />
+    <Content Include="scripts\vendor\quill\dist\quill.base.css" />
+    <Content Include="scripts\vendor\quill\dist\quill.js" />
+    <Content Include="scripts\vendor\quill\dist\quill.min.js" />
+    <Content Include="scripts\vendor\quill\dist\quill.snow.css" />
+    <Content Include="scripts\vendor\requirejs-text\text.js" />
+    <Content Include="scripts\vendor\requirejs\require.js" />
+    <Content Include="scripts\vendor\swiper.js" />
+    <Content Include="scripts\vendor\underscore\underscore-min.js" />
+    <Content Include="scripts\vendor\underscore\underscore.js" />
+    <Content Include="scripts\views\blog\NewPost.js" />
+    <Content Include="scripts\views\blog\Post.js" />
+    <Content Include="scripts\views\blog\Posts.js" />
+    <Content Include="scripts\views\login-register\Login.js" />
+    <Content Include="scripts\views\login-register\Register.js" />
+    <Content Include="scripts\views\login-register\LoginLayout.js" />
+    <Content Include="scripts\views\main\MainBlog.js" />
+    <Content Include="scripts\views\main\MainBanner.js" />
+    <Content Include="scripts\views\main\MainContent.js" />
+    <Content Include="scripts\views\Nav.js" />
+    <Content Include="styles\css\bootstrap.css" />
+    <Content Include="styles\css\font-icons.css" />
+    <Content Include="styles\css\fonts.css" />
+    <Content Include="styles\css\magnific-popup.css" />
+    <Content Include="styles\style.css" />
+    <Content Include="templates\blog\new-post.html" />
+    <Content Include="templates\blog\post.html" />
+    <Content Include="templates\blog\posts.html" />
+    <Content Include="templates\login-register\login.html" />
+    <Content Include="templates\login-register\register.html" />
+    <Content Include="templates\login-register\login-layout.html" />
+    <Content Include="templates\main\main-blog.html" />
+    <Content Include="templates\main\main-header.html" />
+    <Content Include="templates\main\main-layout.html" />
+    <Content Include="templates\nav.html" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="images\about\" />
+    <Folder Include="images\appshowcase\" />
+    <Folder Include="images\author\" />
+    <Folder Include="images\blog\full\" />
+    <Folder Include="images\blog\grid\" />
+    <Folder Include="images\blog\masonry\" />
+    <Folder Include="images\blog\small\" />
+    <Folder Include="images\blog\standard\" />
+    <Folder Include="images\clients\logo\" />
+    <Folder Include="images\events\parallax\" />
+    <Folder Include="images\events\thumbs\" />
+    <Folder Include="images\extras\" />
+    <Folder Include="images\icons\features\" />
+    <Folder Include="images\icons\flags\" />
+    <Folder Include="images\icons\restaurant\" />
+    <Folder Include="images\landing\" />
+    <Folder Include="images\magazine\carousel\" />
+    <Folder Include="images\magazine\small\movie\" />
+    <Folder Include="images\magazine\thumb\" />
+    <Folder Include="images\others\" />
+    <Folder Include="images\parallax\home\" />
+    <Folder Include="images\portfolio\1\full\" />
+    <Folder Include="images\portfolio\2\" />
+    <Folder Include="images\portfolio\3\" />
+    <Folder Include="images\portfolio\4\mixed\" />
+    <Folder Include="images\portfolio\extended\thumbs\" />
+    <Folder Include="images\portfolio\full\" />
+    <Folder Include="images\portfolio\masonry\2\" />
+    <Folder Include="images\portfolio\masonry\3\" />
+    <Folder Include="images\portfolio\masonry\4\" />
+    <Folder Include="images\portfolio\parallax\" />
+    <Folder Include="images\portfolio\single\full-thumbs\" />
+    <Folder Include="images\portfolio\single\fullwidth\" />
+    <Folder Include="images\portfolio\single\full\" />
+    <Folder Include="images\portfolio\single\modal\" />
+    <Folder Include="images\portfolio\single\slider-thumbs\" />
+    <Folder Include="images\restaurant\slider\thumb\" />
+    <Folder Include="images\restaurant\thumb\gallery\" />
+    <Folder Include="images\services\" />
+    <Folder Include="images\shop\banners\" />
+    <Folder Include="images\shop\category\" />
+    <Folder Include="images\shop\dress\" />
+    <Folder Include="images\shop\pants\" />
+    <Folder Include="images\shop\shoes\" />
+    <Folder Include="images\shop\slider\" />
+    <Folder Include="images\shop\small\" />
+    <Folder Include="images\shop\sunglasses\" />
+    <Folder Include="images\shop\thumbs\dress\" />
+    <Folder Include="images\shop\thumbs\small\" />
+    <Folder Include="images\shop\tshirts\" />
+    <Folder Include="images\shop\watches\" />
+    <Folder Include="images\slider\boxed\thumbs\" />
+    <Folder Include="images\slider\full\thumbs\" />
+    <Folder Include="images\slider\rev\main\" />
+    <Folder Include="images\slider\rev\shop\" />
+    <Folder Include="images\slider\swiper\sized\" />
+    <Folder Include="images\slider\swiper\thumbs\" />
+    <Folder Include="images\slider\thumbs\" />
+    <Folder Include="images\team\" />
+    <Folder Include="images\testimonials\" />
+    <Folder Include="images\videos\" />
+    <Folder Include="images\wedding\events\" />
+    <Folder Include="images\wedding\thumb\" />
+    <Folder Include="scripts\etc\" />
+    <Folder Include="scripts\js\" />
+    <Folder Include="scripts\vendor\marionette\lib\core\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+    <Content Include="Areas\HelpPage\Views\Web.config" />
+    <Content Include="Areas\HelpPage\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\ResourceModel.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\Index.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\TextSample.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\SimpleTypeModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\Samples.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\Parameters.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ModelDescriptionLink.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\KeyValuePairModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\InvalidSample.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ImageSample.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\HelpPageApiModel.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\EnumTypeModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\DictionaryModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ComplexTypeModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\CollectionModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
+    <Content Include="Areas\HelpPage\Views\_ViewStart.cshtml" />
+    <Content Include="fonts\font-icons.eot" />
+    <Content Include="fonts\font-icons.ttf" />
+    <Content Include="fonts\font-icons.woff" />
+    <Content Include="fonts\lined-icons.eot" />
+    <Content Include="fonts\lined-icons.ttf" />
+    <Content Include="fonts\lined-icons.woff" />
+    <Content Include="fonts\Simple-Line-Icons.eot" />
+    <Content Include="fonts\Simple-Line-Icons.ttf" />
+    <Content Include="fonts\Simple-Line-Icons.woff" />
+    <Content Include=".bowerrc" />
+    <Content Include="bower.json" />
+    <Content Include="package.json" />
+    <EntityDeploy Include="Models\SCDrdModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SCDrdModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\SCDrdModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SCDrdModel.edmx</DependentUpon>
+      <LastGenOutput>SCDrdModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\SCDrdModel.edmx.diagram">
+      <DependentUpon>SCDrdModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\SCDrdModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SCDrdModel.edmx</DependentUpon>
+      <LastGenOutput>SCDrdModel.cs</LastGenOutput>
+    </Content>
+    <None Include="Project_Readme.html" />
+    <Content Include="scripts\node_modules\.bin\r.js.cmd" />
+    <Content Include="scripts\node_modules\requirejs\package.json" />
+    <Content Include="scripts\node_modules\requirejs\README.md" />
+    <Content Include="scripts\vendor\animate.less\.bower.json" />
+    <Content Include="scripts\vendor\animate.less\animate.less" />
+    <Content Include="scripts\vendor\animate.less\bower.json" />
+    <Content Include="scripts\vendor\animate.less\package.json" />
+    <Content Include="scripts\vendor\animate.less\README.md" />
+    <Content Include="scripts\vendor\animate.less\source\animated.less" />
+    <Content Include="scripts\vendor\animate.less\source\bounce.less" />
+    <Content Include="scripts\vendor\animate.less\source\bounceIn.less" />
+    <Content Include="scripts\vendor\animate.less\source\bounceInDown.less" />
+    <Content Include="scripts\vendor\animate.less\source\bounceInLeft.less" />
+    <Content Include="scripts\vendor\animate.less\source\bounceInRight.less" />
+    <Content Include="scripts\vendor\animate.less\source\bounceInUp.less" />
+    <Content Include="scripts\vendor\animate.less\source\bounceOut.less" />
+    <Content Include="scripts\vendor\animate.less\source\bounceOutDown.less" />
+    <Content Include="scripts\vendor\animate.less\source\bounceOutLeft.less" />
+    <Content Include="scripts\vendor\animate.less\source\bounceOutRight.less" />
+    <Content Include="scripts\vendor\animate.less\source\bounceOutUp.less" />
+    <Content Include="scripts\vendor\animate.less\source\fadeIn.less" />
+    <Content Include="scripts\vendor\animate.less\source\fadeInDown.less" />
+    <Content Include="scripts\vendor\animate.less\source\fadeInDownBig.less" />
+    <Content Include="scripts\vendor\animate.less\source\fadeInLeft.less" />
+    <Content Include="scripts\vendor\animate.less\source\fadeInLeftBig.less" />
+    <Content Include="scripts\vendor\animate.less\source\fadeInRight.less" />
+    <Content Include="scripts\vendor\animate.less\source\fadeInRightBig.less" />
+    <Content Include="scripts\vendor\animate.less\source\fadeInUp.less" />
+    <Content Include="scripts\vendor\animate.less\source\fadeInUpBig.less" />
+    <Content Include="scripts\vendor\animate.less\source\fadeOut.less" />
+    <Content Include="scripts\vendor\animate.less\source\fadeOutDown.less" />
+    <Content Include="scripts\vendor\animate.less\source\fadeOutDownBig.less" />
+    <Content Include="scripts\vendor\animate.less\source\fadeOutLeft.less" />
+    <Content Include="scripts\vendor\animate.less\source\fadeOutLeftBig.less" />
+    <Content Include="scripts\vendor\animate.less\source\fadeOutRight.less" />
+    <Content Include="scripts\vendor\animate.less\source\fadeOutRightBig.less" />
+    <Content Include="scripts\vendor\animate.less\source\fadeOutUp.less" />
+    <Content Include="scripts\vendor\animate.less\source\fadeOutUpBig.less" />
+    <Content Include="scripts\vendor\animate.less\source\flash.less" />
+    <Content Include="scripts\vendor\animate.less\source\flip.less" />
+    <Content Include="scripts\vendor\animate.less\source\flipInX.less" />
+    <Content Include="scripts\vendor\animate.less\source\flipInY.less" />
+    <Content Include="scripts\vendor\animate.less\source\flipOutX.less" />
+    <Content Include="scripts\vendor\animate.less\source\flipOutY.less" />
+    <Content Include="scripts\vendor\animate.less\source\hinge.less" />
+    <Content Include="scripts\vendor\animate.less\source\lightSpeedIn.less" />
+    <Content Include="scripts\vendor\animate.less\source\lightSpeedOut.less" />
+    <Content Include="scripts\vendor\animate.less\source\pulse.less" />
+    <Content Include="scripts\vendor\animate.less\source\rollIn.less" />
+    <Content Include="scripts\vendor\animate.less\source\rollOut.less" />
+    <Content Include="scripts\vendor\animate.less\source\rotateIn.less" />
+    <Content Include="scripts\vendor\animate.less\source\rotateInDownLeft.less" />
+    <Content Include="scripts\vendor\animate.less\source\rotateInDownRight.less" />
+    <Content Include="scripts\vendor\animate.less\source\rotateInUpLeft.less" />
+    <Content Include="scripts\vendor\animate.less\source\rotateInUpRight.less" />
+    <Content Include="scripts\vendor\animate.less\source\rotateOut.less" />
+    <Content Include="scripts\vendor\animate.less\source\rotateOutDownLeft.less" />
+    <Content Include="scripts\vendor\animate.less\source\rotateOutDownRight.less" />
+    <Content Include="scripts\vendor\animate.less\source\rotateOutUpLeft.less" />
+    <Content Include="scripts\vendor\animate.less\source\rotateOutUpRight.less" />
+    <Content Include="scripts\vendor\animate.less\source\shake.less" />
+    <Content Include="scripts\vendor\animate.less\source\swing.less" />
+    <Content Include="scripts\vendor\animate.less\source\tada.less" />
+    <Content Include="scripts\vendor\animate.less\source\wiggle.less" />
+    <Content Include="scripts\vendor\animate.less\source\wobble.less" />
+    <Content Include="scripts\vendor\backbone.babysitter\.bower.json" />
+    <Content Include="scripts\vendor\backbone.babysitter\bower.json" />
+    <Content Include="scripts\vendor\backbone.babysitter\CHANGELOG.md" />
+    <Content Include="scripts\vendor\backbone.babysitter\lib\backbone.babysitter.map" />
+    <Content Include="scripts\vendor\backbone.babysitter\LICENSE.md" />
+    <Content Include="scripts\vendor\backbone.babysitter\readme.md" />
+    <Content Include="scripts\vendor\backbone.marionette\.bower.json" />
+    <Content Include="scripts\vendor\backbone.marionette\bower.json" />
+    <Content Include="scripts\vendor\backbone.marionette\changelog.md" />
+    <Content Include="scripts\vendor\backbone.marionette\lib\backbone.marionette.map" />
+    <Content Include="scripts\vendor\backbone.marionette\lib\core\backbone.marionette.map" />
+    <Content Include="scripts\vendor\backbone.marionette\package.json" />
+    <Content Include="scripts\vendor\backbone.marionette\readme.md" />
+    <Content Include="scripts\vendor\backbone.radio\.bower.json" />
+    <Content Include="scripts\vendor\backbone.radio\bower.json" />
+    <Content Include="scripts\vendor\backbone.radio\build\backbone.radio.js.map" />
+    <Content Include="scripts\vendor\backbone.radio\build\backbone.radio.min.js.map" />
+    <Content Include="scripts\vendor\backbone.radio\CHANGELOG.md" />
+    <Content Include="scripts\vendor\backbone.radio\LICENSE" />
+    <Content Include="scripts\vendor\backbone.radio\package.json" />
+    <Content Include="scripts\vendor\backbone.radio\README.md" />
+    <Content Include="scripts\vendor\backbone.wreqr\.bower.json" />
+    <Content Include="scripts\vendor\backbone.wreqr\bower.json" />
+    <Content Include="scripts\vendor\backbone.wreqr\CHANGELOG.md" />
+    <Content Include="scripts\vendor\backbone.wreqr\lib\backbone.wreqr.map" />
+    <Content Include="scripts\vendor\backbone.wreqr\LICENSE.md" />
+    <Content Include="scripts\vendor\backbone.wreqr\readme.md" />
+    <Content Include="scripts\vendor\backbone\.bower.json" />
+    <Content Include="scripts\vendor\backbone\backbone-min.map" />
+    <Content Include="scripts\vendor\backbone\bower.json" />
+    <Content Include="scripts\vendor\backbone\LICENSE" />
+    <Content Include="scripts\vendor\jquery\.bower.json" />
+    <Content Include="scripts\vendor\jquery\bower.json" />
+    <Content Include="scripts\vendor\jquery\dist\jquery.min.map" />
+    <Content Include="scripts\vendor\jquery\src\sizzle\dist\sizzle.min.map" />
+    <Content Include="scripts\vendor\moment\.bower.json" />
+    <Content Include="scripts\vendor\moment\bower.json" />
+    <Content Include="scripts\vendor\moment\CHANGELOG.md" />
+    <Content Include="scripts\vendor\moment\LICENSE" />
+    <Content Include="scripts\vendor\moment\README.md" />
+    <Content Include="scripts\vendor\requirejs-text\.bower.json" />
+    <Content Include="scripts\vendor\requirejs-text\bower.json" />
+    <Content Include="scripts\vendor\requirejs-text\LICENSE" />
+    <Content Include="scripts\vendor\requirejs-text\package.json" />
+    <Content Include="scripts\vendor\requirejs-text\README.md" />
+    <Content Include="scripts\vendor\requirejs\.bower.json" />
+    <Content Include="scripts\vendor\requirejs\bower.json" />
+    <Content Include="scripts\vendor\requirejs\README.md" />
+    <Content Include="scripts\vendor\underscore\.bower.json" />
+    <Content Include="scripts\vendor\underscore\bower.json" />
+    <Content Include="scripts\vendor\underscore\LICENSE" />
+    <Content Include="scripts\vendor\underscore\README.md" />
+    <Content Include="scripts\vendor\underscore\underscore-min.map" />
+    <Content Include="styles\less\animate.less" />
+    <Content Include="styles\less\animate\animated.less" />
+    <Content Include="styles\less\animate\bounce.less" />
+    <Content Include="styles\less\animate\bounceIn.less" />
+    <Content Include="styles\less\animate\bounceInDown.less" />
+    <Content Include="styles\less\animate\bounceInLeft.less" />
+    <Content Include="styles\less\animate\bounceInRight.less" />
+    <Content Include="styles\less\animate\bounceInUp.less" />
+    <Content Include="styles\less\animate\bounceOut.less" />
+    <Content Include="styles\less\animate\bounceOutDown.less" />
+    <Content Include="styles\less\animate\bounceOutLeft.less" />
+    <Content Include="styles\less\animate\bounceOutRight.less" />
+    <Content Include="styles\less\animate\bounceOutUp.less" />
+    <Content Include="styles\less\animate\fadeIn.less" />
+    <Content Include="styles\less\animate\fadeInDown.less" />
+    <Content Include="styles\less\animate\fadeInDownBig.less" />
+    <Content Include="styles\less\animate\fadeInLeft.less" />
+    <Content Include="styles\less\animate\fadeInLeftBig.less" />
+    <Content Include="styles\less\animate\fadeInRight.less" />
+    <Content Include="styles\less\animate\fadeInRightBig.less" />
+    <Content Include="styles\less\animate\fadeInUp.less" />
+    <Content Include="styles\less\animate\fadeInUpBig.less" />
+    <Content Include="styles\less\animate\fadeOut.less" />
+    <Content Include="styles\less\animate\fadeOutDown.less" />
+    <Content Include="styles\less\animate\fadeOutDownBig.less" />
+    <Content Include="styles\less\animate\fadeOutLeft.less" />
+    <Content Include="styles\less\animate\fadeOutLeftBig.less" />
+    <Content Include="styles\less\animate\fadeOutRight.less" />
+    <Content Include="styles\less\animate\fadeOutRightBig.less" />
+    <Content Include="styles\less\animate\fadeOutUp.less" />
+    <Content Include="styles\less\animate\fadeOutUpBig.less" />
+    <Content Include="styles\less\animate\flash.less" />
+    <Content Include="styles\less\animate\flip.less" />
+    <Content Include="styles\less\animate\flipInX.less" />
+    <Content Include="styles\less\animate\flipInY.less" />
+    <Content Include="styles\less\animate\flipOutX.less" />
+    <Content Include="styles\less\animate\flipOutY.less" />
+    <Content Include="styles\less\animate\hinge.less" />
+    <Content Include="styles\less\animate\lightSpeedIn.less" />
+    <Content Include="styles\less\animate\lightSpeedOut.less" />
+    <Content Include="styles\less\animate\pulse.less" />
+    <Content Include="styles\less\animate\rollIn.less" />
+    <Content Include="styles\less\animate\rollOut.less" />
+    <Content Include="styles\less\animate\rotateIn.less" />
+    <Content Include="styles\less\animate\rotateInDownLeft.less" />
+    <Content Include="styles\less\animate\rotateInDownRight.less" />
+    <Content Include="styles\less\animate\rotateInUpLeft.less" />
+    <Content Include="styles\less\animate\rotateInUpRight.less" />
+    <Content Include="styles\less\animate\rotateOut.less" />
+    <Content Include="styles\less\animate\rotateOutDownLeft.less" />
+    <Content Include="styles\less\animate\rotateOutDownRight.less" />
+    <Content Include="styles\less\animate\rotateOutUpLeft.less" />
+    <Content Include="styles\less\animate\rotateOutUpRight.less" />
+    <Content Include="styles\less\animate\shake.less" />
+    <Content Include="styles\less\animate\swing.less" />
+    <Content Include="styles\less\animate\tada.less" />
+    <Content Include="styles\less\animate\wiggle.less" />
+    <Content Include="styles\less\animate\wobble.less" />
+    <Content Include="styles\less\blog-sub.less" />
+    <Content Include="styles\less\theme\blog.less" />
+    <Content Include="styles\less\theme\content.less" />
+    <Content Include="styles\less\theme\dark.less" />
+    <Content Include="styles\less\theme\events.less" />
+    <Content Include="styles\less\theme\extras.less" />
+    <Content Include="styles\less\theme\footer.less" />
+    <Content Include="styles\less\theme\header.less" />
+    <Content Include="styles\less\theme\helpers.less" />
+    <Content Include="styles\less\theme\layouts.less" />
+    <Content Include="styles\less\theme\mixins.less" />
+    <Content Include="styles\less\theme\pagetitle.less" />
+    <Content Include="styles\less\theme\portfolio.less" />
+    <Content Include="styles\less\theme\responsive.less" />
+    <Content Include="styles\less\theme\shop.less" />
+    <Content Include="styles\less\theme\shortcodes.less" />
+    <Content Include="styles\less\theme\shortcodes\alerts.less" />
+    <Content Include="styles\less\theme\shortcodes\buttons.less" />
+    <Content Include="styles\less\theme\shortcodes\carousel.less" />
+    <Content Include="styles\less\theme\shortcodes\clients.less" />
+    <Content Include="styles\less\theme\shortcodes\countdown.less" />
+    <Content Include="styles\less\theme\shortcodes\counter-skills.less" />
+    <Content Include="styles\less\theme\shortcodes\dividers.less" />
+    <Content Include="styles\less\theme\shortcodes\faqs.less" />
+    <Content Include="styles\less\theme\shortcodes\feature-box.less" />
+    <Content Include="styles\less\theme\shortcodes\headings.less" />
+    <Content Include="styles\less\theme\shortcodes\misc.less" />
+    <Content Include="styles\less\theme\shortcodes\overlay.less" />
+    <Content Include="styles\less\theme\shortcodes\pricing.less" />
+    <Content Include="styles\less\theme\shortcodes\process-steps.less" />
+    <Content Include="styles\less\theme\shortcodes\promo.less" />
+    <Content Include="styles\less\theme\shortcodes\social-icons.less" />
+    <Content Include="styles\less\theme\shortcodes\styled-icons.less" />
+    <Content Include="styles\less\theme\shortcodes\tabs.less" />
+    <Content Include="styles\less\theme\shortcodes\team.less" />
+    <Content Include="styles\less\theme\shortcodes\testimonials.less" />
+    <Content Include="styles\less\theme\shortcodes\toggles-accordions.less" />
+    <Content Include="styles\less\theme\shortcodes\youtubebg.less" />
+    <Content Include="styles\less\theme\sliders.less" />
+    <Content Include="styles\less\theme\topbar.less" />
+    <Content Include="styles\less\theme\typography.less" />
+    <Content Include="styles\less\theme\variables.less" />
+    <Content Include="styles\less\theme\widgets.less" />
+    <Content Include="styles\style.less" />
+    <Content Include="styles\less\site.less" />
+    <Content Include="scripts\vendor\quill\.bower.json" />
+    <Content Include="scripts\vendor\quill\bower.json" />
+    <Content Include="scripts\vendor\quill\docs\style-guide.md" />
+    <Content Include="scripts\vendor\quill\LICENSE" />
+    <Content Include="scripts\vendor\quill\README.md" />
+    <Content Include="scripts\vendor\bootstrap\.bower.json" />
+    <Content Include="scripts\vendor\bootstrap\bower.json" />
+    <Content Include="scripts\vendor\bootstrap\CHANGELOG.md" />
+    <Content Include="scripts\vendor\bootstrap\dist\css\bootstrap-theme.css.map" />
+    <Content Include="scripts\vendor\bootstrap\dist\css\bootstrap-theme.min.css.map" />
+    <Content Include="scripts\vendor\bootstrap\dist\css\bootstrap.css.map" />
+    <Content Include="scripts\vendor\bootstrap\dist\css\bootstrap.min.css.map" />
+    <Content Include="scripts\vendor\bootstrap\dist\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="scripts\vendor\bootstrap\dist\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="scripts\vendor\bootstrap\dist\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="scripts\vendor\bootstrap\dist\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="scripts\vendor\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="scripts\vendor\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="scripts\vendor\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="scripts\vendor\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="scripts\vendor\bootstrap\grunt\.jshintrc" />
+    <Content Include="scripts\vendor\bootstrap\grunt\configBridge.json" />
+    <Content Include="scripts\vendor\bootstrap\grunt\sauce_browsers.yml" />
+    <Content Include="scripts\vendor\bootstrap\js\.jscsrc" />
+    <Content Include="scripts\vendor\bootstrap\js\.jshintrc" />
+    <Content Include="scripts\vendor\bootstrap\less\.csscomb.json" />
+    <Content Include="scripts\vendor\bootstrap\less\.csslintrc" />
+    <Content Include="scripts\vendor\bootstrap\less\alerts.less" />
+    <Content Include="scripts\vendor\bootstrap\less\badges.less" />
+    <Content Include="scripts\vendor\bootstrap\less\bootstrap.less" />
+    <Content Include="scripts\vendor\bootstrap\less\breadcrumbs.less" />
+    <Content Include="scripts\vendor\bootstrap\less\button-groups.less" />
+    <Content Include="scripts\vendor\bootstrap\less\buttons.less" />
+    <Content Include="scripts\vendor\bootstrap\less\carousel.less" />
+    <Content Include="scripts\vendor\bootstrap\less\close.less" />
+    <Content Include="scripts\vendor\bootstrap\less\code.less" />
+    <Content Include="scripts\vendor\bootstrap\less\component-animations.less" />
+    <Content Include="scripts\vendor\bootstrap\less\dropdowns.less" />
+    <Content Include="scripts\vendor\bootstrap\less\forms.less" />
+    <Content Include="scripts\vendor\bootstrap\less\glyphicons.less" />
+    <Content Include="scripts\vendor\bootstrap\less\grid.less" />
+    <Content Include="scripts\vendor\bootstrap\less\input-groups.less" />
+    <Content Include="scripts\vendor\bootstrap\less\jumbotron.less" />
+    <Content Include="scripts\vendor\bootstrap\less\labels.less" />
+    <Content Include="scripts\vendor\bootstrap\less\list-group.less" />
+    <Content Include="scripts\vendor\bootstrap\less\media.less" />
+    <Content Include="scripts\vendor\bootstrap\less\mixins.less" />
+    <Content Include="scripts\vendor\bootstrap\less\mixins\alerts.less" />
+    <Content Include="scripts\vendor\bootstrap\less\mixins\background-variant.less" />
+    <Content Include="scripts\vendor\bootstrap\less\mixins\border-radius.less" />
+    <Content Include="scripts\vendor\bootstrap\less\mixins\buttons.less" />
+    <Content Include="scripts\vendor\bootstrap\less\mixins\center-block.less" />
+    <Content Include="scripts\vendor\bootstrap\less\mixins\clearfix.less" />
+    <Content Include="scripts\vendor\bootstrap\less\mixins\forms.less" />
+    <Content Include="scripts\vendor\bootstrap\less\mixins\gradients.less" />
+    <Content Include="scripts\vendor\bootstrap\less\mixins\grid-framework.less" />
+    <Content Include="scripts\vendor\bootstrap\less\mixins\grid.less" />
+    <Content Include="scripts\vendor\bootstrap\less\mixins\hide-text.less" />
+    <Content Include="scripts\vendor\bootstrap\less\mixins\image.less" />
+    <Content Include="scripts\vendor\bootstrap\less\mixins\labels.less" />
+    <Content Include="scripts\vendor\bootstrap\less\mixins\list-group.less" />
+    <Content Include="scripts\vendor\bootstrap\less\mixins\nav-divider.less" />
+    <Content Include="scripts\vendor\bootstrap\less\mixins\nav-vertical-align.less" />
+    <Content Include="scripts\vendor\bootstrap\less\mixins\opacity.less" />
+    <Content Include="scripts\vendor\bootstrap\less\mixins\pagination.less" />
+    <Content Include="scripts\vendor\bootstrap\less\mixins\panels.less" />
+    <Content Include="scripts\vendor\bootstrap\less\mixins\progress-bar.less" />
+    <Content Include="scripts\vendor\bootstrap\less\mixins\reset-filter.less" />
+    <Content Include="scripts\vendor\bootstrap\less\mixins\reset-text.less" />
+    <Content Include="scripts\vendor\bootstrap\less\mixins\resize.less" />
+    <Content Include="scripts\vendor\bootstrap\less\mixins\responsive-visibility.less" />
+    <Content Include="scripts\vendor\bootstrap\less\mixins\size.less" />
+    <Content Include="scripts\vendor\bootstrap\less\mixins\tab-focus.less" />
+    <Content Include="scripts\vendor\bootstrap\less\mixins\table-row.less" />
+    <Content Include="scripts\vendor\bootstrap\less\mixins\text-emphasis.less" />
+    <Content Include="scripts\vendor\bootstrap\less\mixins\text-overflow.less" />
+    <Content Include="scripts\vendor\bootstrap\less\mixins\vendor-prefixes.less" />
+    <Content Include="scripts\vendor\bootstrap\less\modals.less" />
+    <Content Include="scripts\vendor\bootstrap\less\navbar.less" />
+    <Content Include="scripts\vendor\bootstrap\less\navs.less" />
+    <Content Include="scripts\vendor\bootstrap\less\normalize.less" />
+    <Content Include="scripts\vendor\bootstrap\less\pager.less" />
+    <Content Include="scripts\vendor\bootstrap\less\pagination.less" />
+    <Content Include="scripts\vendor\bootstrap\less\panels.less" />
+    <Content Include="scripts\vendor\bootstrap\less\popovers.less" />
+    <Content Include="scripts\vendor\bootstrap\less\print.less" />
+    <Content Include="scripts\vendor\bootstrap\less\progress-bars.less" />
+    <Content Include="scripts\vendor\bootstrap\less\responsive-embed.less" />
+    <Content Include="scripts\vendor\bootstrap\less\responsive-utilities.less" />
+    <Content Include="scripts\vendor\bootstrap\less\scaffolding.less" />
+    <Content Include="scripts\vendor\bootstrap\less\tables.less" />
+    <Content Include="scripts\vendor\bootstrap\less\theme.less" />
+    <Content Include="scripts\vendor\bootstrap\less\thumbnails.less" />
+    <Content Include="scripts\vendor\bootstrap\less\tooltip.less" />
+    <Content Include="scripts\vendor\bootstrap\less\type.less" />
+    <Content Include="scripts\vendor\bootstrap\less\utilities.less" />
+    <Content Include="scripts\vendor\bootstrap\less\variables.less" />
+    <Content Include="scripts\vendor\bootstrap\less\wells.less" />
+    <Content Include="scripts\vendor\bootstrap\LICENSE" />
+    <Content Include="scripts\vendor\bootstrap\nuget\bootstrap.less.nuspec" />
+    <Content Include="scripts\vendor\bootstrap\nuget\bootstrap.nuspec" />
+    <Content Include="scripts\vendor\bootstrap\nuget\MyGet.ps1" />
+    <Content Include="scripts\vendor\bootstrap\package.json" />
+    <Content Include="scripts\vendor\bootstrap\README.md" />
+    <None Include="Properties\PublishProfiles\scddietitian.com.pubxml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>61715</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:61715/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

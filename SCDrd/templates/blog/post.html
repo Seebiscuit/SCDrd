@@ -1,0 +1,32 @@
+﻿ <div class="entry-timeline">
+    <%=day%><span><%=month%></span>
+    <div class="timeline-divider"></div>
+</div>
+
+<div class="entry-image">
+    <a href="images/blog/full/17.jpg" data-lightbox="image">
+    <img class="image_fade" src="<%=image%>" alt="<%=title%>"/></a>
+</div>
+
+<div class="entry-title">
+    <h2><a href="blog-single.html"><%=title%></a></h2>
+</div>
+<ul class="entry-meta clearfix">
+    <li><i class="icon-folder-open"></i> 
+    <% if (typeof Tags !='undefined') { %>}
+        <% for (var i = 0; i < Tags.length; i++) { %>
+            <a href="#"><%= Tags[i].category %></a> 
+            <% if (i < Tags.length - 1) { %> ,&nbsp;<% } %>
+        <% } %>
+    <% } %>
+    </li>
+    <li><a href="blog-single.html#comments"><i class="icon-comments"></i> 13 Comments</a></li>
+    <%if (isAdmin) { %>
+    <li><a class="delete-post" tabindex="0" role="button"><i class="icon-remove"></i> Delete Post</a></li>
+    <% } %>
+</ul>
+
+<div class="entry-content">
+    <%= post1.substr(0, Math.min(255, post1.length)) + "..." %>
+    <a href="blog-single.html" class="more-link">Read More</a>
+</div>

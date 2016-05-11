@@ -1,0 +1,18 @@
+{
+  "name": "SCDrdsite",
+  "devDependencies": {
+    "jshint": "latest",
+    "less ": "latest"
+  },
+  "scripts": {
+    "lint": "jshint *.js",
+    "prebuild:js": "npm run lint",
+    "build:css": "lessc styles/style.less styles/style.css",
+    "watch:css": "watch lessc styles/style.less styles/style.css",
+    "build:js": "npm run prebuild:js && node.exe r.js -o scripts/app.build.js",
+    "build": "npm run build:css && npm run build:js"
+  },
+  "dependencies": {
+    "bower": "^1.6.3"
+  }
+}

@@ -1,0 +1,155 @@
+﻿<div class="entry-timeline">
+    <%=day%><span><%=month%></span>
+    <div class="timeline-divider"></div>
+</div>
+
+<div class="col_full entry-title">
+    <label for="post-title">Title:</label>
+    <input type="text" id="post-title" name="post-title" value="" class="sm-form-control">
+</div>
+
+<div class="col_full">
+    <label for="post-tags">Tags:</label>
+    <input type="text" id="post-tags" name="post-tags" value="" class="sm-form-control">
+</div>
+
+<div class="col_full entry-content">
+    <div id="newpost-ql-full-toolbar" class="toolbar ql-toolbar ql-snow">
+        <div id="toolbar">
+            <span class="ql-format-group">
+                <select title="Font" class="ql-font">
+                    <option value="sans-serif" selected="">Sans Serif</option>
+                    <option value="serif">Serif</option>
+                    <option value="monospace">Monospace</option>
+                </select>
+                <select title="Size" class="ql-size">
+                    <option value="10px">Small</option>
+                    <option value="13px" selected="">Normal</option>
+                    <option value="18px">Large</option>
+                    <option value="32px">Huge</option>
+                </select>
+            </span>
+            <span class="ql-format-group">
+                <span title="Bold" class="ql-format-button ql-bold"></span>
+                <span class="ql-format-separator"></span>
+                <span title="Italic" class="ql-format-button ql-italic"></span>
+                <span class="ql-format-separator"></span>
+                <span title="Underline" class="ql-format-button ql-underline"></span>
+                <span class="ql-format-separator"></span>
+                <span title="Strikethrough" class="ql-format-button ql-strike"></span>
+            </span>
+            <span class="ql-format-group">
+                <select title="Text Color" class="ql-color">
+                    <option value="rgb(0, 0, 0)" label="rgb(0, 0, 0)" selected=""></option>
+                    <option value="rgb(230, 0, 0)" label="rgb(230, 0, 0)"></option>
+                    <option value="rgb(255, 153, 0)" label="rgb(255, 153, 0)"></option>
+                    <option value="rgb(255, 255, 0)" label="rgb(255, 255, 0)"></option>
+                    <option value="rgb(0, 138, 0)" label="rgb(0, 138, 0)"></option>
+                    <option value="rgb(0, 102, 204)" label="rgb(0, 102, 204)"></option>
+                    <option value="rgb(153, 51, 255)" label="rgb(153, 51, 255)"></option>
+                    <option value="rgb(255, 255, 255)" label="rgb(255, 255, 255)"></option>
+                    <option value="rgb(250, 204, 204)" label="rgb(250, 204, 204)"></option>
+                    <option value="rgb(255, 235, 204)" label="rgb(255, 235, 204)"></option>
+                    <option value="rgb(255, 255, 204)" label="rgb(255, 255, 204)"></option>
+                    <option value="rgb(204, 232, 204)" label="rgb(204, 232, 204)"></option>
+                    <option value="rgb(204, 224, 245)" label="rgb(204, 224, 245)"></option>
+                    <option value="rgb(235, 214, 255)" label="rgb(235, 214, 255)"></option>
+                    <option value="rgb(187, 187, 187)" label="rgb(187, 187, 187)"></option>
+                    <option value="rgb(240, 102, 102)" label="rgb(240, 102, 102)"></option>
+                    <option value="rgb(255, 194, 102)" label="rgb(255, 194, 102)"></option>
+                    <option value="rgb(255, 255, 102)" label="rgb(255, 255, 102)"></option>
+                    <option value="rgb(102, 185, 102)" label="rgb(102, 185, 102)"></option>
+                    <option value="rgb(102, 163, 224)" label="rgb(102, 163, 224)"></option>
+                    <option value="rgb(194, 133, 255)" label="rgb(194, 133, 255)"></option>
+                    <option value="rgb(136, 136, 136)" label="rgb(136, 136, 136)"></option>
+                    <option value="rgb(161, 0, 0)" label="rgb(161, 0, 0)"></option>
+                    <option value="rgb(178, 107, 0)" label="rgb(178, 107, 0)"></option>
+                    <option value="rgb(178, 178, 0)" label="rgb(178, 178, 0)"></option>
+                    <option value="rgb(0, 97, 0)" label="rgb(0, 97, 0)"></option>
+                    <option value="rgb(0, 71, 178)" label="rgb(0, 71, 178)"></option>
+                    <option value="rgb(107, 36, 178)" label="rgb(107, 36, 178)"></option>
+                    <option value="rgb(68, 68, 68)" label="rgb(68, 68, 68)"></option>
+                    <option value="rgb(92, 0, 0)" label="rgb(92, 0, 0)"></option>
+                    <option value="rgb(102, 61, 0)" label="rgb(102, 61, 0)"></option>
+                    <option value="rgb(102, 102, 0)" label="rgb(102, 102, 0)"></option>
+                    <option value="rgb(0, 55, 0)" label="rgb(0, 55, 0)"></option>
+                    <option value="rgb(0, 41, 102)" label="rgb(0, 41, 102)"></option>
+                    <option value="rgb(61, 20, 102)" label="rgb(61, 20, 102)"></option>
+                </select>
+                <span class="ql-format-separator"></span>
+                <select title="Background Color" class="ql-background">
+                    <option value="rgb(0, 0, 0)" label="rgb(0, 0, 0)"></option>
+                    <option value="rgb(230, 0, 0)" label="rgb(230, 0, 0)"></option>
+                    <option value="rgb(255, 153, 0)" label="rgb(255, 153, 0)"></option>
+                    <option value="rgb(255, 255, 0)" label="rgb(255, 255, 0)"></option>
+                    <option value="rgb(0, 138, 0)" label="rgb(0, 138, 0)"></option>
+                    <option value="rgb(0, 102, 204)" label="rgb(0, 102, 204)"></option>
+                    <option value="rgb(153, 51, 255)" label="rgb(153, 51, 255)"></option>
+                    <option value="rgb(255, 255, 255)" label="rgb(255, 255, 255)" selected=""></option>
+                    <option value="rgb(250, 204, 204)" label="rgb(250, 204, 204)"></option>
+                    <option value="rgb(255, 235, 204)" label="rgb(255, 235, 204)"></option>
+                    <option value="rgb(255, 255, 204)" label="rgb(255, 255, 204)"></option>
+                    <option value="rgb(204, 232, 204)" label="rgb(204, 232, 204)"></option>
+                    <option value="rgb(204, 224, 245)" label="rgb(204, 224, 245)"></option>
+                    <option value="rgb(235, 214, 255)" label="rgb(235, 214, 255)"></option>
+                    <option value="rgb(187, 187, 187)" label="rgb(187, 187, 187)"></option>
+                    <option value="rgb(240, 102, 102)" label="rgb(240, 102, 102)"></option>
+                    <option value="rgb(255, 194, 102)" label="rgb(255, 194, 102)"></option>
+                    <option value="rgb(255, 255, 102)" label="rgb(255, 255, 102)"></option>
+                    <option value="rgb(102, 185, 102)" label="rgb(102, 185, 102)"></option>
+                    <option value="rgb(102, 163, 224)" label="rgb(102, 163, 224)"></option>
+                    <option value="rgb(194, 133, 255)" label="rgb(194, 133, 255)"></option>
+                    <option value="rgb(136, 136, 136)" label="rgb(136, 136, 136)"></option>
+                    <option value="rgb(161, 0, 0)" label="rgb(161, 0, 0)"></option>
+                    <option value="rgb(178, 107, 0)" label="rgb(178, 107, 0)"></option>
+                    <option value="rgb(178, 178, 0)" label="rgb(178, 178, 0)"></option>
+                    <option value="rgb(0, 97, 0)" label="rgb(0, 97, 0)"></option>
+                    <option value="rgb(0, 71, 178)" label="rgb(0, 71, 178)"></option>
+                    <option value="rgb(107, 36, 178)" label="rgb(107, 36, 178)"></option>
+                    <option value="rgb(68, 68, 68)" label="rgb(68, 68, 68)"></option>
+                    <option value="rgb(92, 0, 0)" label="rgb(92, 0, 0)"></option>
+                    <option value="rgb(102, 61, 0)" label="rgb(102, 61, 0)"></option>
+                    <option value="rgb(102, 102, 0)" label="rgb(102, 102, 0)"></option>
+                    <option value="rgb(0, 55, 0)" label="rgb(0, 55, 0)"></option>
+                    <option value="rgb(0, 41, 102)" label="rgb(0, 41, 102)"></option>
+                    <option value="rgb(61, 20, 102)" label="rgb(61, 20, 102)"></option>
+                </select>
+            </span>
+            <span class="ql-format-group">
+                <span title="List" class="ql-format-button ql-list"></span>
+                <span class="ql-format-separator"></span>
+                <span title="Bullet" class="ql-format-button ql-bullet"></span>
+                <span class="ql-format-separator"></span>
+                <select title="Text Alignment" class="ql-align">
+                    <option value="left" label="Left" selected=""></option>
+                    <option value="center" label="Center"></option>
+                    <option value="right" label="Right"></option>
+                    <option value="justify" label="Justify"></option>
+                </select>
+            </span>
+            <span class="ql-format-group">
+                <span title="Link" class="ql-format-button ql-link"></span>
+                <span class="ql-format-separator"></span>
+                <span title="Image" class="ql-format-button ql-image"></span>
+            </span>
+        </div>
+
+        <!-- Create the editor container -->
+        <div id="newpost-ql-editor">
+            <!--DELETE FOR PRODUCTION-->
+            <!--<div style="text-align: center;"><span style="font-size: 32px;"><b><span style="font-family: sans-serif;"><span style="color: rgb(255, 194, 102);">Awesome Gary</span></span></b></span></div><div><span style="font-size: 18px;"><b><i><span style="font-family: sans-serif;">This is a cool editor</span></i></b></span></div><div style="text-align: justify;"><span style="font-family: sans-serif;">Now all we have to do is sell it to Sima. I really hope she'll love it. I think she may, because it so cool. Like I can write in beautiful text. And keep writing. </span>Florem ipsum foxtail lily marguerite golden rod, mum lily of the valley hyacinth sneezeweed. Houndstongue, dorset&nbsp;<span style="background-color: rgb(255, 255, 255);">heath marigold gentian, fuchsia honeysuckle, globe artichoke. Red rose bellflower sunflower spotted rock-rose lisianthus. Ipsum transvaal daisy, bloom eustoma moth orchid, dune helleborine. Flowering cherry forget-me-not cowslip columbine. Guernsey lily begonia heather.</span></div><div style="text-align: justify;"><br></div><div style="text-align: center;">		<img src="http://images.all-free-download.com/images/graphicthumb/translucent_red_lein_flower_221583.jpg" style="text-align: justify;"></div><div style="text-align: justify;"><br></div><div style="text-align: justify;">Windflower cowbane red-hot poker, bogbean. African lily foxglove snowdrop marigold bloom. Bee balm cosmos petal globeflower. Oxlip honeysuckle rose speedwell alpine thistle. Barberton daisy yarrow scarlet plume masterwort bluebell rosemary. Feverfew lilac sea holly montbretia lupin amazon lily spring. Bearberry.</div><div style="text-align: justify;"><br></div><div style="text-align: center;"><img src="http://images.all-free-download.com/images/graphicthumb/light_red_red_lein_flower_220297.jpg"><img src="http://images.all-free-download.com/images/graphicthumb/rose_flower_red_222372.jpg"></div><div style="text-align: justify;"><br></div><div>Flower chickweed monkshood golden shower orchid. Daffodil florist’s nighmare pasqueflower guelder rose bloody crane's-bill september flower arum. Stock obedient plant spotted orchid gillyflower evening primrose. Yarrow tulip anemone cockscomb fuchsia, slipper orchid.</div>-->
+            <!--DELETE FOR PRODUCTION-->
+        </div>
+
+        <div class="image-upload"></div>
+    </div>
+
+    <div class="col_full">
+        <a aria-role="button" tabindex="0" class="button button-rounded button-reveal button-large button-dirtygreen accept-post">
+            <i class="icon-line-arrow-right"></i>Post Entry
+        </a>
+        <a aria-role="button" tabindex="0" class="button button-rounded button-reveal button-large button-red button-light add-post-cancel">
+            <i class="icon-trash2"></i>
+            <span>Cancel</span>
+        </a>
+    </div>

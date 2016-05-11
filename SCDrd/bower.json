@@ -1,0 +1,16 @@
+{
+  "name": "scdrd init",
+  "version": "1.0.0",
+  "dependencies": {
+    "animate.less": "*",
+    "backbone": "latest",
+    "backbone.marionette": "marionette#~2.4.2",
+    "backbone.radio": "~1.0.2",
+    "jquery": "latest",
+    "underscore": "latest",
+    "requirejs": "^2.1.20",
+    "requirejs-text": "^2.0.12",
+    "moment": "~2.10.6",
+    "quill": "~0.20.1"
+  }
+}
